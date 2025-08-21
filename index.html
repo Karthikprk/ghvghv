@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KARTHIK R - VLSI Engineer Portfolio</title>
+  <style>
+    /* ===== General Styling ===== */
+    body {
+      font-family: "Segoe UI", Arial, sans-serif;
+      margin: 0; 
+      padding: 0;
+      background: #ffffff;
+      color: #333;
+      scroll-behavior: smooth;
+    }
+
+    /* ===== Header ===== */
+    header {
+      background: linear-gradient(135deg, #1a1a40, #292961);
+      color: white;
+      padding: 90px 20px 60px;
+      text-align: center;
+      position: relative;
+    }
+
+    /* Profile Image Styling */
+    .profile-pic {
+      width: 250px;   
+      height: 250px;  
+      border-radius: 50%;
+      object-fit: cover;
+      border: 8px solid #ffcc00;
+      box-shadow: 0 0 25px rgba(0,0,0,0.4);
+      margin-bottom: 25px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .profile-pic:hover {
+      transform: scale(1.1) rotate(5deg);
+      box-shadow: 0 0 35px rgba(255,204,0,0.8);
+    }
+
+    header h1 { 
+      margin: 10px 0 0; 
+      font-size: 3.2em; 
+      letter-spacing: 2px; 
+      animation: fadeInDown 2s ease;
+    }
+
+    /* Typing Effect */
+    header p.typing {
+      margin: 10px 0 0;
+      font-size: 1.3em;
+      border-right: 2px solid #ffcc00;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(40, end) forwards, blink 0.7s step-end infinite alternate;
+    }
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
+    /* ===== Navigation Bar ===== */
+    nav {
+      background: #292961;
+      display: flex;
+      justify-content: center;
+      padding: 14px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    nav a {
+      color: #fff;
+      margin: 0 20px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s, transform 0.3s;
+    }
+    nav a:hover {
+      color: #ffcc00;
+      transform: scale(1.1);
+    }
+
+    /* ===== Section Styling ===== */
+    section {
+      max-width: 1000px;
+      margin: 60px auto;
+      padding: 30px;
+      background: #ffffff;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      opacity: 0;
+      transform: translateY(30px);
+      transition: all 1s ease;
+    }
+    section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    section h2 {
+      border-left: 8px solid #ffcc00;
+      padding-left: 12px;
+      margin-bottom: 25px;
+      color: #1a1a40;
+      font-size: 1.8em;
+    }
+
+    /* ===== Skills Section with Bars ===== */
+    .skills ul { list-style: none; padding: 0; }
+    .skills li {
+      margin: 15px 0;
+    }
+    .bar {
+      background: #eee;
+      border-radius: 10px;
+      overflow: hidden;
+      height: 22px;
+      position: relative;
+    }
+    .bar span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, #1a1a40, #ffcc00);
+      width: 0;
+      transition: width 2s ease;
+    }
+    .bar .percent {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.9em;
+      font-weight: bold;
+      color: #1a1a40;
+    }
+
+    /* ===== Timeline ===== */
+    .timeline {
+      position: relative;
+      padding-left: 30px;
+      border-left: 4px solid #ffcc00;
+    }
+    .timeline li {
+      margin-bottom: 20px;
+      position: relative;
+      padding-left: 15px;
+      animation: fadeInUp 1s ease;
+    }
+    .timeline li::before {
+      content: "🔹";
+      position: absolute;
+      left: -25px;
+      top: 0;
+      font-size: 1.2em;
+    }
+    .highlight {
+      background: #fff9e6;
+      border-left: 6px solid #ff9800;
+      padding: 12px;
+      border-radius: 10px;
+    }
+
+    /* ===== Resume Button ===== */
+    .resume-btn {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #1a1a40;
+      color: white;
+      font-weight: bold;
+      text-decoration: none;
+      border-radius: 30px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .resume-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 15px rgba(0,0,0,0.3);
+      background: #292961;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      background: #1a1a40;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    /* ===== Keyframes ===== */
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== Header ===== -->
+  <header>
+    <!-- <img src="profile.jpg" alt="Profile Picture" class="profile-pic"> -->
+    <h1>KARTHIK. R</h1>
+    <p class="typing">Fresher | VLSI Engineer | ECE Graduate</p>
+    <p style="margin-top:10px; font-size:1.1em; opacity:0.8;">📍 Thiruthangal, Sivakasi</p>
+  </header>
+
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#internships">Internships</a>
+    <a href="#certifications">Certifications</a>
+    <a href="#resume">Resume</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <!-- ===== About Section ===== -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I am an enthusiastic Electronics and Communication Engineering graduate with strong interest in VLSI Design, Digital Electronics, and Semiconductor Technology. 
+      I aim to start my career as a VLSI Engineer where I can apply my knowledge of Verilog, SystemVerilog, and CMOS design concepts.
+    </p>
+  </section>
+
+  <!-- ===== Skills Section ===== -->
+  <section id="skills" class="skills">
+    <h2>Technical Skills</h2>
+    <ul>
+      <li>HDL: Verilog, VHDL, SystemVerilog 
+        <div class="bar"><span style="--level:85%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>FPGA Design (Xilinx, Altera)
+        <div class="bar"><span style="--level:75%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>ASIC Flow: RTL Coding, Simulation, Synthesis
+        <div class="bar"><span style="--level:70%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>EDA Tools: ModelSim, Cadence, Synopsys
+        <div class="bar"><span style="--level:65%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>Digital Design, CMOS Fundamentals
+        <div class="bar"><span style="--level:80%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>C, C++, Python (basic scripting)
+        <div class="bar"><span style="--level:60%;"></span><div class="percent">0%</div></div>
+      </li>
+      <li>IoT Platforms: ESP32, Arduino, ThingSpeak
+        <div class="bar"><span style="--level:70%;"></span><div class="percent">0%</div></div>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Projects Section ===== -->
+  <section id="projects" class="projects">
+    <h2>Projects & Achievements</h2>
+    <ul class="timeline">
+      <li><b>RFID-based Secure Access System</b> – Designed using Verilog, implemented on FPGA board.</li>
+      <li><b>32-bit RISC Processor</b> – RTL design, functional verification, and FPGA implementation.</li>
+      <li><b>Low Power ALU Design</b> – Optimization using CMOS logic.</li>
+      <li><b>Smart Ration Dispensing System</b> – Built using ESP32 with RFID authentication & cloud analytics.</li>
+      <li><b>Underground Fault Detector</b> – Arduino-based cable fault detection with LCD display.</li>
+      <li class="highlight">
+        <b>🏆 Hackathon: Wonders of AI (Kalasalingam University)</b> – Developed an AI-powered automation solution.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Internship Section ===== -->
+  <section id="internships" class="internships">
+    <h2>Internship</h2>
+    <ul class="timeline">
+      <li>
+        <b>Embedded Systems & IoT – NSIC (National Small Industries Corporation)</b><br>
+        Learned Embedded Systems, IoT platforms, and real-time applications. 
+        Hands-on with Arduino, ESP32, and IoT cloud solutions.
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Certifications Section ===== -->
+  <section id="certifications" class="certifications">
+    <h2>Certifications</h2>
+    <ul class="timeline">
+      <li>
+        <b>📜 NPTEL Course:</b> Introduction to Internet of Things  
+        <br><span style="opacity:0.8;">Completed with strong understanding of IoT concepts, protocols, and applications.</span>
+      </li>
+      <li>
+        <b>📜 Infosys Springboard:</b> C Programming  
+        <br><span style="opacity:0.8;">Learned programming fundamentals, problem-solving, and implementation of algorithms in C.</span>
+      </li>
+    </ul>
+  </section>
+
+  <!-- ===== Resume Section ===== -->
+  <section id="resume">
+    <h2>Resume</h2>
+    <p>
+      <a class="resume-btn" href="karthik.pdf" target="_blank">📄 Download Resume</a>
+    </p>
+  </section>
+
+  <!-- ===== Contact Section ===== -->
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:karthikprk2004@gmail.com">karthikprk2004@gmail.com</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/karthik-karthik-8439aa34b" target="_blank">linkedin.com/in/karthik-karthik-8439aa34b</a></p>
+    <p>GitHub: <a href="https://github.com/Karthikprk" target="_blank">github.com/Karthikprk</a></p>
+    <p>Phone: <a href="tel:+918667626348">+91 86676 26348</a></p>
+    <p>Address: Thiruthangal, Sivakasi</p>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    <p>&copy; 2025 KARTHIK. R | VLSI Engineer Portfolio</p>
+  </footer>
+
+  <!-- ===== Scroll Animations Script ===== -->
+  <script>
+    const sections = document.querySelectorAll("section");
+    const bars = document.querySelectorAll(".bar span");
+    const percents = document.querySelectorAll(".bar .percent");
+
+    window.addEventListener("scroll", () => {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 100){
+          section.classList.add("show");
+        }
+      });
+
+      bars.forEach((bar, index) => {
+        const rect = bar.getBoundingClientRect();
+        if(rect.top < window.innerHeight - 50 && bar.style.width === ""){
+          let level = parseInt(bar.style.getPropertyValue("--level"));
+          bar.style.width = level + "%";
+
+          // Animate percentage counting
+          let count = 0;
+          let target = level;
+          let counter = setInterval(() => {
+            if(count >= target){
+              clearInterval(counter);
+            } else {
+              count++;
+              percents[index].innerText = count + "%";
+            }
+          }, 20); // speed of counting
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
